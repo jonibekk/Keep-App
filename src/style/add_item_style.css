@@ -1,0 +1,70 @@
+/* Main add note div */
+
+#menu{
+  margin: auto;
+  margin-top: 70px;
+  width: 50%;
+  border: 1px solid #777;
+  padding-top: 5px;
+  padding-left: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px 2px #000;
+}
+#list {
+    max-height: 0;
+    display: flex;
+    transition: max-height 0.5s ease-out;
+    overflow: hidden;
+}
+#menu:hover #list {
+    max-height: 500px;
+    transition: max-height 0.5s ease-in;
+}
+[contentEditable=true]:empty:not(:focus):before{
+    content:attr(data-text);
+    color:#999;
+}
+
+.title-div{
+  background: transparent;
+  border: 0 solid black;
+  width: 100%;
+  color: white;
+}
+.body-div{
+  margin-top: 10px;
+  background: transparent;
+  border: 0 solid black;
+  color: white;
+
+  rows: 1;
+  width: 90%;
+  height: auto;
+}
+.title-div:focus{
+  outline-width: 0;
+}
+.body-div:focus{
+  outline-width: 0;
+  overflow: hidden;
+}
+
+.fab {
+  margin: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: all 0.1s ease-in-out;
+
+  font-size: 36px;
+  color: white;
+  text-align: center;
+  line-height: 45px;
+  background: #666;
+}
+
+.fab:hover {
+  background: #666;
+  box-shadow: 0 2px 4px 0 #222;
+  transform: scale(1.05);
+}
