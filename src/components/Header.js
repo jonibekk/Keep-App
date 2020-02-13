@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 class Header extends Component {
 
   style = {
-    background: '#343A40'
+    background: 'bg-light'
   }
 
   constructor(){
@@ -23,14 +23,14 @@ class Header extends Component {
       document.getElementById("mySidenav").style.width = "20%";
       document.getElementById("main_content").style.marginLeft = "20%";
       this.style = {
-        background: '#202124'
+        background: 'bg-dark'
       }
     }
     else {
       document.getElementById("mySidenav").style.width = "0";
       document.getElementById("main_content").style.marginLeft = "0";
       this.style = {
-        background: '#343A40'
+        background: 'bg-light'
       }
     }
   }
@@ -42,13 +42,13 @@ class Header extends Component {
         <div className="my-header-sidenav">
           <div id="mySidenav" className="sidenav">
             <div className="menu-items">
-              <a href="#">About</a>
-              <a href="#">Services</a>
-              <a href="#">Clients</a>
-              <a href="#">Contact</a>
+              <a href="/#">About</a>
+              <a href="/#">Services</a>
+              <a href="/#">Clients</a>
+              <a href="/#">Contact</a>
             </div>
           </div>
-          <nav className='navbar navbar-dark bg-dark'>
+          <nav className='navbar navbar-light bg-light'>
             <div className="toggler-icon" onClick={this.openNavClose} style={this.style}>
               <div className='toggler-icon-row'></div>
               <div className='toggler-icon-row'></div>

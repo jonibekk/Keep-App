@@ -24,11 +24,10 @@
 .toggler-icon .toggler-icon-row{
   width: 20px;
   height: 3px;
-  background: white;
+  background: black;
   margin-top: 3px;
   margin-bottom: 3px;
   border-radius: 15%;
-
 }
 
 .sidenav{
