@@ -11,6 +11,7 @@ class MainContent extends React.Component {
     this.state = {
       dataExist: false,
       style: {display: 'none'},
+      deleteKey: 0,
       list: []
     }
     this.addItem = this.addItem.bind(this)
@@ -26,16 +27,21 @@ class MainContent extends React.Component {
     }
   }
 
+  deleteItem = (key) => {
+    console.log('Deleted: ' + key);
+    this.setState({ list: [...this.state.list.filter((item) => item.key !== key)], deleteKey: key })
+  }
+
   render () {
 
     let m_list = this.state.list.map((item) =>
-    <MainCardContents style={{display: this.state.style}} title={item.title} content={item.content}/>)
+    <MainCardContents deleteItem={this.deleteItem} style={{display: this.state.style}} key={item.key} item={item}/>)
 
     return(
       <div id="main_content">
-        <AddNewNote callBackFromParent={this.addItem}/>
+        <AddNewNote callBackFromParent={this.addItem} deleteKey = {this.state.deleteKey} />
         <div style={this.state.style} className="card-columns columns-6-xl columns-5-lg columns-4-md columns-3-sm ">
-          {this.state.dataExist && m_list}
+          {m_list}
         </div>
       </div>
     )
